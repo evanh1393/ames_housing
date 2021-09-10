@@ -1,4 +1,4 @@
-# project-ames
+# Ames Housing Price Predictions
 
 ## Problem Statement
 I am trying to find what may be the best predictor of sale price that a client can be proactive about increasing the money they receive at sale.
