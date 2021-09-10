@@ -1,0 +1,24 @@
+# project-ames
+
+## Problem Statement
+I am trying to find what may be the best predictor of sale price that a client can be proactive about increasing the money they receive at sale.
+
+## Analysis Summary
+The analysis shows that features related to house quality or size do well at predicting the sale price.  The better the quality and the bigger the house, the better chance you have at getting more money. Unfortunately, the linear regression model I implemented only accounted for about 80% of the movement of the sale price. I believe having a better way to sort and bin location data would significantly improve these results.
+
+## Concluesions and Recommendations
+
+### Conclusions
+Ah yes, housing, where would we be without thee? With a homeownership rate of 65.8%, the United States is the 65thest country globally in homeownership. Why does this matter? It means you, the totally random reader I have no prior knowledge of, that you might very well own a home. And if that is the case, you are in luck because I did entry-level Data Science work to bring you the secret of increasing your home's value. 
+
+But hold on there; first, I need to give you the gift of context. The dataset I used to gain my newfound insight is 2051 house sale entries from Ames, Iowa. In addition to having 2051 entries, it also has 81, most of which were either scales or categories. There were also a lot of nans, which turned out to be more of an encoding problem than a missing data problem. For the feature 'Lot Frontage,' I had to do a bit of digging. Lot frontage is sort of like the width of a property. To deal with the missing data here, I took a naive approach and treated the missing values as squares and took one side of them, which probably turned out to be a bad idea because many imputed values were over the mean and median. Regardless, a blind dog gets a bone every once in while, and my model accuracy did improve. I was initially going to simply assume the values to be zero, but once I did more research I found that my assumptions were incorrect. 
+
+When implementing my Linear Regression model to complete my first objective and answer my problem statement, I found two variables. The overall quality and total square footage, a column I engineered by adding the first-floor sq footage to the second-floor, were the best predictors. Upon looking at the data set my next thought was what would a remodel do to the value of a house? I created a variable to track whether or not a remodel was done on a house, and I found that there was little difference. So with all this information in mind I am able to say that I'm not convinced there is a lot you can do to drastically increase the sale price of your house. 
+
+In fact this was sort of a let down for me. In anycase I do want to dive a little deeper into the quality based variables. There were to scales of quality in this, one was a score 1 - 10, and the other was a scale I created 1-6 (NA - Ex quality). Higher average sale prices for higher scores were consistent across thes variables, and the linear regression model was pretty responsive to most of them. I am honing in on these because these seem to fit my project statement the best, in that they seem to be accountable for a decent amount of the Sale Price, but I want to slow down before I allude to a false narrative.
+
+Even though a good amount of Sale Price is tied to these variables, I would not say that it is necessarily something one can do to add value. In fact what the model is actually saying is that these are pretty good predictors. For insatnce, if a house is in a bad neighborhood, I would not lead a client to assume that by making it very nice and pretty we can add an extra \$200k of value. What I would say is that having a clean house in a bad neighborhood, is a lot better than having an unkempt house in a bad neighborhood. Which brings me to my final point, location. Location was really the big thing I feel like I was missing from this project. I was unable to tell which neighborhoods may be adding to price simply because they are desirable. If I were to tackle this again I would definitely drill down more into categorizing which neighborhoods were desirable and which were less desirable. 
+ 
+ 
+### Recommendation
+So, my recommendation is make sure your house is clean and well kept when you are looking to sell. Our best predictors were either size related, or quality related, and if you can't do a lot about the size, then work on the quality. I would also be not be hasty to make other generalizations about this data set because of the particular time period it came from. 2006-2010 saw a lot of volatility in the real estate market, so I would ultimately like to have data from a more "normal" time frame to analyze and compare for differences. 
